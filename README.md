@@ -22,7 +22,7 @@ There is only one interface.
 
 ``` javascript
 // suppose PARAMETERS is a one-dimentional associate array.
-router.get(ROUTE_ID, PARAMETERS);
+(String) router.get(ROUTE_ID, PARAMETERS);
 ```
 
 Please note that unknown parameters for a route will be ignored.
