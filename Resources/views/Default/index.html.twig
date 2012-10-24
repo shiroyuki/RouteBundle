@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+<title>Test Drive</title>
+<body>
+Hello {{ name }}!
+<script src="{{ path('shiroyuki_route_route_offline_router') }}"></script>
+<script>
+r = new OfflineRouter();
+console.log(r.get('shiroyuki_route_homepage', {'name': 'Juti'}));
+</script>
+</body>
+</html>

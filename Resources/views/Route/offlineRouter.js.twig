@@ -1,0 +1,42 @@
+{% spaceless %}
+var OfflineRouter = function () {
+    'use strict';
+};
+
+OfflineRouter.prototype.routeTable = {% autoescape false %}{{ route_table }}{% endautoescape %};
+
+OfflineRouter.prototype.get = function (id, parameters, method) {
+    parameters = parameters || null;
+    method     = method || 'ANY';
+
+    var route,
+        actualRoute,
+        i = 0,
+        parameterCount,
+        targetName,
+        targetPattern;
+
+    if (!this.routeTable.hasOwnProperty(id)) {
+        return null;
+    }
+
+    route          = this.routeTable[id];
+    actualRoute    = String(route.pattern);
+    parameterCount = route.parameters.length;
+
+    if (typeof parameters === 'object') {
+        for (; i < parameterCount; ++i) {
+            targetName    = route.parameters[i];
+
+            if (!parameters.hasOwnProperty(targetName)) {
+                continue;
+            }
+            
+            targetPattern = new RegExp(['\{', route.parameters[i], '\}'].join(''), 'g');
+            actualRoute   = actualRoute.replace(targetPattern, parameters[targetName]);
+        }
+    }
+
+    return actualRoute;
+};
+{% endspaceless %}
