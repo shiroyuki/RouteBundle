@@ -6,7 +6,7 @@ var OfflineRouter = function () {
 OfflineRouter.prototype.routeTable = {% autoescape false %}{{ route_table }}{% endautoescape %};
 
 OfflineRouter.prototype.get = function (id, parameters, method) {
-    parameters = parameters || null;
+    parameters = parameters || {};
     method     = method || 'ANY';
 
     var route,
@@ -26,12 +26,12 @@ OfflineRouter.prototype.get = function (id, parameters, method) {
 
     if (typeof parameters === 'object') {
         for (; i < parameterCount; ++i) {
-            targetName    = route.parameters[i];
+            targetName = route.parameters[i];
 
             if (!parameters.hasOwnProperty(targetName)) {
                 continue;
             }
-            
+
             targetPattern = new RegExp(['\{', route.parameters[i], '\}'].join(''), 'g');
             actualRoute   = actualRoute.replace(targetPattern, parameters[targetName]);
         }
@@ -39,4 +39,13 @@ OfflineRouter.prototype.get = function (id, parameters, method) {
 
     return actualRoute;
 };
+
+// Define as a RequireJS module.
+if (typeof define === "function") {
+    // Define the class of the router.
+    define( "Shiroyuki/Route/OfflineRouter", [], function () { return OfflineRouter; } );
+
+    // Define the global instance of the router.
+    define( "router", ["Shiroyuki/Route/OfflineRouter"], function (OfflineRouter) { return new OfflineRouter(); } );
+}
 {% endspaceless %}
