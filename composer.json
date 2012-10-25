@@ -20,7 +20,6 @@
         "psr-0": { "Shiroyuki\\Bundle\\RouteBundle": "" }
     },
     "target-dir": "Shiroyuki/Bundle/RouteBundle",
-    "minimum-stability": "stable",
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
