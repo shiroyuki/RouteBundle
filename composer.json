@@ -1,0 +1,23 @@
+{
+    "name": "shiroyuki/route-bundle",
+    "type": "route-bundle",
+    "description": "Shiroyuki RouteBundle",
+    "keywords": ["JavaScript", "Route"],
+    "homepage": "https://github.com/shiroyuki/RouteBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juti Noppornpitak",
+            "email": "jnopporn@shiroyuki.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1,<2.3-dev"
+    },
+    "autoload": {
+        "psr-0": { "Shiroyuki\\Bundle\\RouteBundle": "" }
+    },
+    "target-dir": "Shiroyuki/Bundle/RouteBundle",
+    "minimum-stability": "dev"
+}
