@@ -38,7 +38,7 @@ OfflineRouter.prototype.get = function (id, parameters, method) {
         }
     }
 
-    return actualRoute;
+    return [this.urlPrefix, actualRoute].join('');
 };
 
 // Define as a RequireJS module.
