@@ -1,7 +1,6 @@
 {
     "name": "shiroyuki/route-bundle",
     "type": "symfony-bundle",
-    "version": "1.0.1-dev",
     "description": "Shiroyuki RouteBundle",
     "keywords": ["JavaScript", "Route"],
     "homepage": "https://github.com/shiroyuki/RouteBundle",
@@ -24,7 +23,7 @@
     "minimum-stability": "stable",
     "extra": {
         "branch-alias": {
-            "dev-master": "master"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
