@@ -1,6 +1,7 @@
 {
     "name": "shiroyuki/route-bundle",
     "type": "route-bundle",
+    "version": "1.0.1-dev",
     "description": "Shiroyuki RouteBundle",
     "keywords": ["JavaScript", "Route"],
     "homepage": "https://github.com/shiroyuki/RouteBundle",
@@ -8,7 +9,8 @@
     "authors": [
         {
             "name": "Juti Noppornpitak",
-            "email": "jnopporn@shiroyuki.com"
+            "email": "jnopporn@shiroyuki.com",
+            "homepage": "http://shiroyuki.com"
         }
     ],
     "require": {
@@ -19,5 +21,5 @@
         "psr-0": { "Shiroyuki\\Bundle\\RouteBundle": "" }
     },
     "target-dir": "Shiroyuki/Bundle/RouteBundle",
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
