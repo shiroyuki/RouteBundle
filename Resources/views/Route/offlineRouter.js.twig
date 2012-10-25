@@ -3,7 +3,7 @@ var OfflineRouter = function () {
     'use strict';
 };
 
-OfflineRouter.prototype.urlPrefix  = "app{% if app.environment != 'prod' %}_{{ app.environment }}{% endif %}.php";
+OfflineRouter.prototype.urlPrefix  = "/app{% if app.environment != 'prod' %}_{{ app.environment }}{% endif %}.php";
 OfflineRouter.prototype.routeTable = {% autoescape false %}{{ route_table }}{% endautoescape %};
 
 OfflineRouter.prototype.get = function (id, parameters, method) {
