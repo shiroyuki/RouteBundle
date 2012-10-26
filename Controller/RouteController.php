@@ -14,11 +14,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class RouteController extends Controller
 {
     /**
-     * Generate the offline router action.
+     * Generate the JavaScript code for the offline router.
      *
-     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function offlineRouterAction($a=null, $b=null, $c=null)
+    public function offlineRouterAction()
     {
         if ($this->container->has('profiler')) {
             $this->container->get('profiler')->disable();
